@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import './index.css';
+
 import Home from './pages/Home';
 import Post from './pages/Post';
 import NotFound from './pages/NotFound';
+
 ReactDOM.render(
   <Router>
     <div>
