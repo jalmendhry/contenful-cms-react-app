@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import { client } from './client';
 
-function App() {
+const App = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    client
+      .getEntries({ content_type: 'post' })
+      .then(({ items }) => {
+        setPosts(items);
+        console.log(items);
+      })
+      .catch(console.error);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="">
+      <header className="">
+        <nav>{/* <a href="" */}</nav>
+        <p>My Blog</p>
+        <p>{posts.length}</p>
       </header>
     </div>
   );
-}
+};
 
 export default App;
