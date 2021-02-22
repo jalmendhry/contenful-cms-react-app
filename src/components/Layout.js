@@ -1,18 +1,16 @@
 import React from 'react';
-// import Header from "./header"
+import Header from './Header';
+import Navbar from './Navbar';
 // import Footer from "./footer"
-// import Navbar from "./navbar"
 
-// import "./components.css"
+import './layout.css';
 
 const Layout = ({ children }) => {
   return (
     <div className="container">
-      {/* <Header /> */}
-      {/* <Navbar /> */}
-      <div className="container__content">
-        <div>{children}</div>
-      </div>
+      <Header />
+      <Navbar />
+      <div className="container__content">{children}</div>
       {/* <Footer /> */}
     </div>
   );

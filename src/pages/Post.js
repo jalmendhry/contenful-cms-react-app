@@ -28,7 +28,7 @@ const Post = () => {
       .catch(() => {
         setError(true);
       });
-  }, []);
+  }, [slug]);
 
   if (error) {
     return <Redirect to="/404" />;
